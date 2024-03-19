@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic' // defaults to auto
 // i.e. Input = 700 tokens maximum
 // We use 4.5 * Input to consider the worst-case scenario where we're translating from
 // English to Indian, which is the longest language in terms of token length.
-const MAX_TOKENS_IN_SEGMENT = 700;
+const MAX_TOKENS_IN_SEGMENT = 2000;
 
 const retrieveTranslation = async (
   text: string,
@@ -23,7 +23,7 @@ const retrieveTranslation = async (
     },
     method: "POST",
     body: JSON.stringify({
-      model: "gpt-3.5-turbo-0125",
+      model: "gpt-4-turbo-preview",
       max_tokens: 2048,
       frequency_penalty: 0,
       presence_penalty: 0,
